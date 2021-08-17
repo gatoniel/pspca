@@ -1,9 +1,11 @@
+"""Tests for wrapper submodule."""
 import numpy as np
 
-from prospace_pca import ProspacePCA
+from pspca import PSPCA
 
 
-def test_ProspacePCA():
+def test_interface():
+    """Test scikit-learn interface."""
     points = np.array(
         [
             [np.sqrt(0.5), np.sqrt(0.5), 0],
@@ -12,13 +14,13 @@ def test_ProspacePCA():
     )
 
     dim = 3
-    pspca = ProspacePCA(dim)
-    pspca.fit(points)
+    reducer = PSPCA(dim)
+    reducer.fit(points)
 
-    np.testing.assert_allclose(pspca.v, np.eye(3))
+    np.testing.assert_allclose(reducer.v, np.eye(3))
 
-    t_points = pspca.transform(points)
+    t_points = reducer.transform(points)
     assert t_points.shape[0] == points.shape[0]
     assert t_points.shape[1] == dim
 
-    np.testing.assert_allclose(pspca.fit_transform(points), t_points)
+    np.testing.assert_allclose(reducer.fit_transform(points), t_points)
