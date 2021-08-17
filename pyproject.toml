@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pspca"
-version = "0.0.0"
+version = "0.0.1-alpha.0"
 description = "Prjective Space PCA"
 authors = ["Niklas Netter <niklas.netter@unibas.ch>"]
 license = "MIT"
