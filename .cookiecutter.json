@@ -1,0 +1,12 @@
+{
+  "_template": "gh:cjolowicz/cookiecutter-hypermodern-python",
+  "author": "Niklas Netter",
+  "development_status": "Development Status :: 1 - Planning",
+  "email": "niklas.netter@unibas.ch",
+  "friendly_name": "Prjective Space PCA",
+  "github_user": "gatoniel",
+  "license": "MIT",
+  "package_name": "pspca",
+  "project_name": "pspca",
+  "version": "0.0.0"
+}
