@@ -38,10 +38,10 @@ def pspca(points):
 
     test = test_surroundings(v[:, 0], points)
     if not test[0] and test[1]:
-        warnings.warn("The first component is not a maximum!")
+        warnings.warn("The first component is not a maximum!")  # pragma: no cover
     test = test_surroundings(v[:, -1], points)
     if test[0] and not test[1]:
-        warnings.warn("The last component is not a minimum!")
+        warnings.warn("The last component is not a minimum!")  # pragma: no cover
 
     for i in range(1, v.shape[0] - 1):
         test = test_surroundings(v[:, -1], points)
