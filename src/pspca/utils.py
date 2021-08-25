@@ -75,7 +75,14 @@ def mean(points):
     points = normalize(points)
     matrix_a = np.matmul(points.T, points)
     n = matrix_a.shape[0]
-    return scipy.linalg.eigh(matrix_a, subset_by_index=[n - 1, n - 1])
+    w, v = scipy.linalg.eigh(matrix_a, subset_by_index=[n - 1, n - 1])
+
+    if np.all(v[:, 0] < 0):
+        v[:, 0] *= -1
+    if not np.all(v[:, 0] > 0):
+        warnings.warn("The first component is not strictly positive!")
+
+    return w, v
 
 
 def other_points(v, num=10000):

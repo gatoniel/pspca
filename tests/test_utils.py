@@ -48,8 +48,8 @@ def test_mean():
     pspca_w, pspca_v, _ = utils.pspca(points)
     mean_w, mean_v = utils.mean(points)
     assert mean_v.shape[0] == dim
-    np.testing.assert_equal(mean_w[0], pspca_w[0])
-    np.testing.assert_equal(mean_v[:, 0], pspca_v[:, 0])
+    np.testing.assert_allclose(mean_w[0], pspca_w[0])
+    np.testing.assert_allclose(mean_v[:, 0], pspca_v[:, 0])
 
 
 def test_warnings():
