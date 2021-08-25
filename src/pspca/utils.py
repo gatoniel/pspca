@@ -75,7 +75,7 @@ def mean(points):
     points = normalize(points)
     matrix_a = np.matmul(points.T, points)
     n = matrix_a.shape[0]
-    return scipy.linalg.eigh(matrix_a, subset_by_index=[n - 2, n - 1])
+    return scipy.linalg.eigh(matrix_a, subset_by_index=[n - 1, n - 1])
 
 
 def other_points(v, num=10000):
