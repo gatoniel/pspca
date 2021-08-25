@@ -2,6 +2,7 @@
 import warnings
 
 import numpy as np
+import scipy.linalg
 
 
 def norm(x, keepdims=True):
@@ -70,9 +71,11 @@ def reduce_dimensions(points, v, num):
 
 
 def mean(points):
-    """Calculate the Frechet mean of points."""
-    _, v, _ = pspca(points)
-    return v[:, 0]
+    """Calculate only the Frechet mean of points."""
+    points = normalize(points)
+    matrix_a = np.matmul(points.T, points)
+    n = matrix_a.shape[0]
+    return scipy.linalg.eigh(matrix_a, subset_by_index=[n - 2, n - 1])
 
 
 def other_points(v, num=10000):

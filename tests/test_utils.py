@@ -45,7 +45,11 @@ def test_mean():
     """Test correct dimension output of mean."""
     dim = 5
     points = utils.normalize(np.exp(np.random.randn(100, dim)))
-    assert len(utils.mean(points)) == dim
+    pspca_w, pspca_v, _ = utils.pspca(points)
+    mean_w, mean_v = utils.mean(points)
+    assert mean_v.shape[0] == dim
+    np.testing.assert_equal(mean_w[0], pspca_w[0])
+    np.testing.assert_equal(mean_v[:, 0], pspca_v[:, 0])
 
 
 def test_warnings():
