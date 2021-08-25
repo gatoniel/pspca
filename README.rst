@@ -1,5 +1,5 @@
 Projective Space PCA
-===================
+====================
 
 |PyPI| |Status| |Python Version| |License|
 
