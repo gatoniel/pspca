@@ -1,4 +1,4 @@
-Prjective Space PCA
+Projective Space PCA
 ===================
 
 |PyPI| |Status| |Python Version| |License|
@@ -51,7 +51,7 @@ Requirements
 Installation
 ------------
 
-You can install *Prjective Space PCA* via pip_ from PyPI_:
+You can install *Projective Space PCA* via pip_ from PyPI_:
 
 .. code:: console
 
